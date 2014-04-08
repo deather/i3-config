@@ -1,0 +1,20 @@
+general {
+#	output_format = "dzen2"
+	colors = true
+	interval = 1
+}
+
+order += "volume master"
+order += "time"
+
+time {
+	format = " %d-%m-%Y (S%V) |  %H:%M:%S"
+}
+
+
+volume master {
+	format = " : %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
+}
