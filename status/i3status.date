@@ -8,7 +8,7 @@ order += "volume master"
 order += "time"
 
 time {
-	format = " %d-%m-%Y (S%V) |  %H:%M:%S"
+	format = " %d-%m-%Y (S%V) -  %H:%M:%S"
 }
 
 
