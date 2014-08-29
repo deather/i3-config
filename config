@@ -50,6 +50,15 @@ set $workspaceConfig ""
 set $screenSecondary DVI-I-0
 set $screenPrimary VGA-0
 
+workspace $workspaceConfig output $screenPrimary
+workspace $workspaceDia output $screenPrimary
+workspace $workspaceGames output $screenPrimary
+workspace $workspaceGroovyConsole output $screenPrimary
+workspace $workspaceMail output $screenPrimary
+workspace $workspaceNavigator output $screenPrimary
+workspace $workspaceOffice output $screenPrimary
+workspace $workspaceWork output $screenPrimary
+
 workspace $workspace1 output $screenSecondary
 workspace $workspace2 output $screenSecondary
 workspace $workspace3 output $screenSecondary
@@ -58,17 +67,9 @@ workspace $workspace5 output $screenSecondary
 workspace $workspace6 output $screenSecondary
 
 workspace $workspaceGajim output $screenSecondary
-workspace $workspaceMail output $screenPrimary
+workspace $workspaceMusic output $screenSecondary
 workspace $workspaceSkype output $screenSecondary
 workspace $workspaceVOIP output $screenSecondary
-workspace $workspaceWork output $screenPrimary
-workspace $workspaceMusic output $screenSecondary
-
-workspace $workspaceGames output $screenPrimary
-workspace $workspaceOffice output $screenPrimary
-workspace $workspaceDia output $screenPrimary
-workspace $workspaceConfig output $screenPrimary
-workspace workspaceGroovyConsole output $screenPrimary
 
 assign [class="^jetbrains-idea"] $workspaceWork
 
@@ -106,13 +107,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-# font pango:DejaVu Sans Mono 10
+font pango:Monospace 8
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvtc
 
 bindsym Ctrl+mod1+l exec i3lock -i /home/ch.jourdan/Downloads/Images/Golden_Times_Dual_by_vissroid.png
 
@@ -249,7 +250,7 @@ mode "resize" {
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
-	}
+}
 
 bindsym $mod+r mode "resize"
 
