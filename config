@@ -89,6 +89,7 @@ assign [class="^com-ankamagames-wakfu-client-WakfuClient"] $workspaceGames
 
 assign [class="^Soffice"] $workspaceOffice
 assign [class="^libreoffice"] $workspaceOffice
+assign [instance="^libreoffice"] $workspaceOffice
 
 assign [instance="^google-chrome"] $workspaceNavigator
 assign [instance="^Google-chrome"] $workspaceNavigator
