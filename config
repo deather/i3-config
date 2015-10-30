@@ -16,11 +16,20 @@ set $mod Mod4
 exec $HOME/.i3/bin/startup.sh
 
 # Styling
+
 # class                 border  backgr. text    indicator
-client.focused          #a58700 #c4a000 #555753 #a58700
-client.focused_inactive #333333 #555753 #c4a000 #333333
+
+# Default style
+# client.focused          #046465 #06989a #ffffff #046465
+# client.focused_inactive #046465 #555753 #c9c9c9 #333333
+# client.unfocused        #333333 #000000 #888888 #333333
+# client.urgent           #06989a #08d5d8 #555753 #06989a
+
+# Halloween style
+client.focused          #9C4200 #D85C01 #ffffff #9C4200
+client.focused_inactive #9C4200 #834C24 #c9c9c9 #333333
 client.unfocused        #333333 #000000 #888888 #333333
-client.urgent           #d3c342 #fce94f #555753 #d3c342
+client.urgent           #D85C01 #FF7500 #834C24 #D85C01
 # client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 focus_follows_mouse no
@@ -46,6 +55,7 @@ set $workspaceDia ""
 set $workspaceGroovyConsole ""
 set $workspaceMusic ""
 set $workspaceConfig ""
+set $workspaceDatabase ""
 
 set $screenSecondary DVI-I-0
 set $screenPrimary VGA-0
@@ -65,6 +75,7 @@ workspace $workspace3 output $screenSecondary
 workspace $workspace4 output $screenSecondary
 workspace $workspace5 output $screenSecondary
 workspace $workspace6 output $screenSecondary
+workspace $workspaceDatabase output $screenSecondary
 
 workspace $workspaceGajim output $screenSecondary
 workspace $workspaceMusic output $screenSecondary
@@ -73,6 +84,7 @@ workspace $workspaceVOIP output $screenSecondary
 
 assign [class="^jetbrains-idea"] $workspaceWork
 assign [instance="jetbrains-idea"] $workspaceWork
+assign [class="^Eclipse"] $workspaceWork
 
 assign [instance="^Mail"] $workspaceMail
 
@@ -118,15 +130,16 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec urxvtc -e fish
-bindsym $mod+Return exec urxvtc
+#bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec gnome-terminal
 
-bindsym Ctrl+mod1+l exec i3lock -i /home/ch.jourdan/Downloads/Images/Golden_Times_Dual_by_vissroid.png
+bindsym Ctrl+mod1+l exec i3lock -i /home/ch.jourdan/Downloads/Images/Aurora_by_freelancah.png
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -b -i -p $ -nb black -nf white -sb \#c4a000 -sf \#555753
+bindsym $mod+d exec dmenu_run -b -i -p $ -nb black -nf white -sb \#D85C01 -sf \#834C24
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -191,6 +204,8 @@ bindsym $mod+4 workspace $workspace4
 bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
+
+bindsym Ctrl+Shift+1 workspace $workspaceDatabase
 
 bindsym Ctrl+1 workspace $workspaceWork
 bindsym Ctrl+2 workspace $workspaceGajim
@@ -267,10 +282,10 @@ bar {
 		statusline #ffffff
 		separator  #ffffff
 
-		focused_workspace         #a58700 #c4a000 #555753 #a58700
-		active_workspace          #333333 #555753 #c4a000 #333333
-		inactive_workspace        #333333 #000000 #888888 #333333
-		urgent_workspace          #d3c342 #fce94f #555753 #d3c342
+    focused_workspace          #9C4200 #D85C01 #ffffff #9C4200
+    active_workspace           #9C4200 #834C24 #c9c9c9 #333333
+    inactive_workspace        #333333 #000000 #888888 #333333
+    urgent_workspace           #D85C01 #FF7500 #834C24 #D85C01
 	}
 
 	font pango:FontAwesome 10
@@ -287,10 +302,10 @@ bar {
 		statusline #ffffff
 		separator  #ffffff
 
-		focused_workspace         #a58700 #c4a000 #555753 #a58700
-		active_workspace          #333333 #555753 #c4a000 #333333
-		inactive_workspace        #333333 #000000 #888888 #333333
-		urgent_workspace          #d3c342 #fce94f #555753 #d3c342
+    focused_workspace          #9C4200 #D85C01 #ffffff #9C4200
+    active_workspace           #9C4200 #834C24 #c9c9c9 #333333
+    inactive_workspace        #333333 #000000 #888888 #333333
+    urgent_workspace           #D85C01 #FF7500 #834C24 #D85C01
 	}
 
 	position top
