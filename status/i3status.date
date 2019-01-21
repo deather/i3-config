@@ -4,9 +4,6 @@ general {
 	interval = 1
 }
 
-order += "cpu_usage"
-order += "load"
-order += "disk /"
 order += "volume master"
 order += "time"
 
@@ -20,17 +17,4 @@ volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-}
-
-
-cpu_usage {
-	format = " %usage"
-}
-
-load {
-	format = "%1min"
-}
-
-disk "/" {
-	format = " %free"
 }
