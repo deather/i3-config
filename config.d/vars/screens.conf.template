@@ -1,0 +1,3 @@
+set $screenPrimary VGA-0
+set $screenSecondary DVI-0
+set $screenTertiary HDMI-2

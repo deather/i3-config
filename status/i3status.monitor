@@ -1,0 +1,22 @@
+general {
+#        output_format = "dzen2"
+        colors = true
+        interval = 1
+}
+
+order += "volume master"
+order += "cpu_usage"
+order += "load"
+order += "disk /"
+
+cpu_usage {
+        format = " %usage"
+}
+
+load {
+        format = " %1min"
+}
+
+disk "/" {
+        format = " %free"
+}
